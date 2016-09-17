@@ -3,14 +3,14 @@ import encodings, codecs, re, sys
 
 # Our StreamReader
 class aStreamReader(codecs.StreamReader):
+    def outputFromInput(input):
+        return input
+        
     def readline(self, size=None, keepends=True):
         inputSrc  = self.stream.read().decode("utf8")
         outputSrc = outputFromInput(inputSrc)
         return outputSrc
 
-    def outputFromInput(input):
-        return input
-        
 def search_function(s):
     if s!="acodec": 
         return None

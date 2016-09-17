@@ -1,0 +1,4 @@
+# Ignore Python compiled files *.pyc
+*.pyc
+# Ignore 'vi' swap files
+*.swp
