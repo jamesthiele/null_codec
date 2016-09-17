@@ -5,9 +5,11 @@ import encodings, codecs, re, sys
 class aStreamReader(codecs.StreamReader):
     def readline(self, size=None, keepends=True):
         inputSrc  = self.stream.read().decode("utf8")
-        outputSrc = inputSrc  ## TODO Placeholder
+        outputSrc = outputFromInput(inputSrc)
         return outputSrc
-        ## return  u'%s\n'%self.pysrc.pop(0) if self.pysrc else u''
+
+    def outputFromInput(input):
+        return input
         
 def search_function(s):
     if s!="acodec": 
