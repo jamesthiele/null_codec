@@ -4,6 +4,7 @@ import encodings, codecs, re, sys
 # Our StreamReader
 class aStreamReader(codecs.StreamReader):
     outputSrc = None
+    codecName = "acodec"
 
     def outputFromInput(input):
         return input
@@ -15,11 +16,11 @@ class aStreamReader(codecs.StreamReader):
         return outputSrc.readline()
 
     def search_function(s):
-        if s!="acodec": 
+        if s != codecName: 
             return None
 
         u8 = encodings.search_function("utf8")
-        return codecs.CodecInfo( name = 'acodec', 
+        return codecs.CodecInfo( name = codecName, 
                                  encode = u8.encode,
                                  decode = u8.decode,
                                  incrementalencoder = u8.incrementalencoder,
