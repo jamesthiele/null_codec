@@ -2,3 +2,8 @@
 *.pyc
 # Ignore 'vi' swap files
 *.swp
+# Ignore files James likes to use as temp files
+x
+y
+z
+*.bak
