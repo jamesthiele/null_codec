@@ -1,5 +1,5 @@
 # acodec.py
-import encodings, codecs, re, sys
+import encodings, codecs
 
 def outputFromInput(input):
     return input
