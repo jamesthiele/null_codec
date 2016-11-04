@@ -2,4 +2,3 @@
 # encoding: acodec
 print "yo dude"
 # End of atest.py
-
