@@ -12,16 +12,16 @@ class aStreamReader(codecs.StreamReader):
         return outputSrc
 
 def search_function(s):
-    if s!="acodec": 
+    if s!="null_codec": 
         return None
 
     u8 = encodings.search_function("utf8")
-    return codecs.CodecInfo( name = 'acodec', 
+    return codecs.CodecInfo( name = 'null_codec', 
                              encode = u8.encode,
                              decode = u8.decode,
                              incrementalencoder = u8.incrementalencoder,
                              incrementaldecoder = u8.incrementaldecoder,
-                             streamreader = aStreamReader,        # acodec StreamReader
+                             streamreader = aStreamReader,        # null_codec StreamReader
                              streamwriter = u8.streamwriter)
 
 codecs.register(search_function)  # register our new codec search function

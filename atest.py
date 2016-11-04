@@ -1,4 +1,4 @@
 # atest.py (written in our new language A)
-# encoding: acodec
+# encoding: null_codec
 print "yo dude"
 # End of atest.py
