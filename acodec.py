@@ -3,6 +3,7 @@ import encodings, codecs
 
 # Our StreamReader
 class aStreamReader(codecs.StreamReader):
+    codec_name = "null_codec"
     def outputFromInput(input):
         return input
         
@@ -12,11 +13,11 @@ class aStreamReader(codecs.StreamReader):
         return outputSrc
 
 def search_function(s):
-    if s!="null_codec": 
+    if s!= codec_name: 
         return None
 
     u8 = encodings.search_function("utf8")
-    return codecs.CodecInfo( name = 'null_codec', 
+    return codecs.CodecInfo( name = codec_name, 
                              encode = u8.encode,
                              decode = u8.decode,
                              incrementalencoder = u8.incrementalencoder,
