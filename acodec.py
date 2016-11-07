@@ -1,4 +1,3 @@
-# acodec.py
 import encodings, codecs
 
 # Our StreamReader
@@ -28,12 +27,7 @@ class aStreamReader(codecs.StreamReader):
                                  incrementalencoder = u8.incrementalencoder,
                                  incrementaldecoder = u8.incrementaldecoder,
                                  streamreader = self,        # null_codec StreamReader
-                                 ## streamreader = theStreamReader,        # null_codec StreamReader
-                                 ## streamreader = aStreamReader,        # null_codec StreamReader
                                  streamwriter = u8.streamwriter)
 
 theStreamReader = aStreamReader()
 
-## codecs.register(theStreamReader.search_function)  # register our new codec search function
-## codecs.register(aStreamReader.search_function)  # register our new codec search function
-# End of acodec.py
