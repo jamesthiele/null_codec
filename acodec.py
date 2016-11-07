@@ -4,16 +4,18 @@ import encodings, codecs
 # Our StreamReader
 class aStreamReader(codecs.StreamReader):
     def __init__(self, codec_name = "null_codec"):
-        self.codec_name = codec_name
+        self.codec_name    = codec_name
+        self.output_source = None
         codecs.register(self.search_function)  # register our new codec search function
 
     def outputFromInput(input):
         return input
         
     def readline(self, size=None, keepends=True):
-        inputSrc  = self.stream.read().decode("utf8")
-        outputSrc = outputFromInput(inputSrc)
-        return outputSrc
+        if output_src == None:
+            input_source  = self.stream.read().decode("utf8")
+            output_source = StringIO(outputFromInput(input_source))
+        return output_source.readline(size)
 
     def search_function(s):
         if s!= self.codec_name: 
